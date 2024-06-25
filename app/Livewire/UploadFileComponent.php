@@ -21,6 +21,10 @@ class UploadFileComponent extends Component
     public $fileSize;
     public $finalFile;
 
+    public $accepted_format = [
+        "mp4","mov","avi",'mkv'
+    ];
+
     public function updatedFileChunk()
     {
         $finalPath = Storage::path('/livewire-tmp/'.$this->fileName);

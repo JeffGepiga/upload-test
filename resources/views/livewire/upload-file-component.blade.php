@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-6" x-data="{ has_file: false }">
             <div class="input-group" >
-                <input type="file" id="myFile" name="myFile" @change="has_file = $el.files[0]" onchange="uploadChunks(this)" class="form-control">
+                <input accept="@foreach($accepted_format as $format) video/{{$format}}, @endforeach" type="file" id="myFile" name="myFile" @change="has_file = $el.files[0]" onchange="uploadChunks(this)" class="form-control">
                 <button type="button" :class="has_file?'':'d-none'" @click="has_file=false" class="btn btn-secondary" onclick="stopUpload()">Cancel Upload</button>
             </div>
             <div :class="has_file?'':'d-none'" class="progress mt-2" wire:ignore role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -21,7 +21,7 @@
 
             // Sent along with next call
             const extension = file.name.slice((file.name.lastIndexOf(".") - 1 >>> 0) + 2);
-            if (!["mp4","mov","avi",'mkv'].includes(extension)) {
+            if (!@js($accepted_format).includes(extension)) {
                 el.value=null;
                 alert("The file must be a video format");
                 return false;

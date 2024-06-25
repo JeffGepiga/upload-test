@@ -6,7 +6,7 @@
 <div class="container mt-3">
     <div class="card" id="dropzone">
         <di class="card-header">
-        <h4 class="card-title">JQuery</h4>
+        <h4 class="card-title">JQuery with Resumable Js</h4>
         </di>
         <div class="card-body">
             <div class="text-center" >
