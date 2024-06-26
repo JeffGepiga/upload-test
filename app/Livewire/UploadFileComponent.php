@@ -40,7 +40,6 @@ class UploadFileComponent extends Component
 
         if( $curSize == $this->fileSize ){
            $this->Js("alert('File Uploaded Successfully')");
-           $this->dispatch('finished');
            $this->finalFile = TemporaryUploadedFile::createFromLivewire('/'.$this->fileName);
 
            //store the file to the file_uploads disk
