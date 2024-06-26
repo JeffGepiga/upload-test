@@ -18,7 +18,7 @@ class JqueryUploaderController extends Controller
     }
     
     public function upload(Request $request) {
-        //validate
+        //video validation
         $request->validate([
             'file'=>'required|mimes:'.implode(',', $this->upload_container->allowed_types)
         ]);

@@ -24,3 +24,10 @@ Route::get('/uploaded_files', function(){
 });
 
 
+
+Route::get('/clear-files', function(){
+     \Artisan::call('clear-files');
+     return "Cleared succesfully";
+});
+
+
