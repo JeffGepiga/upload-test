@@ -27,6 +27,7 @@ class LivewireTest extends DuskTestCase
             ->assertDialogOpened('The file must be a video format');
         });
     }
+    
     //you can select files 150MB and higher, and please edit the seconds to wait for the Dialog, it will depend how big the file is
     public function test_if_file_is_succesfully_uploaded(): void
     {
