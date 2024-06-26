@@ -15,6 +15,9 @@
                 <li class="nav-item ">
                     <a class="nav-link @if(Request::is('jquery_implementation')) active @endif" href="{{url('jquery_implementation')}}">Jquery Implementation</a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link @if(Request::is('uploaded_files')) active @endif" href="{{url('uploaded_files')}}">Uploaded_files</a>
+                </li>
             </ul>
         </div>
     </div>
