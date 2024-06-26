@@ -14,7 +14,7 @@
                     Resumable not supported
                 </div>
                 <div id="resumable-drop" style="display: none">
-                    <p><button id="resumable-browse" data-url="{{ url('api/jquery_upload') }}" >Upload</button> or drop here
+                    <p><button id="resumable-browse" data-url="{{ url('https://upload-test.onezzero.com/api/jquery_upload') }}" >Upload</button> or drop here
                     </p>
                     <p></p>
                 </div>
