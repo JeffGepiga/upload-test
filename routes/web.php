@@ -13,7 +13,8 @@ Route::post('/upload_from_dropzone', [DropzoneUploadController::class,'upload_fr
 
 Route::view('/livewire_implementation', 'livewire_implementation');
 
-Route::view('/jquery_implementation', 'jquery_implementation');
+Route::get('/jquery_implementation', [JqueryUploaderController::class,'jquery_implementation']);
+
 Route::post('/jquery_upload', [JqueryUploaderController::class,'upload']);
 
 

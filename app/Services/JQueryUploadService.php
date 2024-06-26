@@ -10,6 +10,8 @@ use Storage;
 
 class JQueryUploadService 
 {    
+    public $allowed_types = ['mp4','ogx','oga','ogv','ogg','webm','mkv'];
+
 	/**
      * Handles the file upload
      *

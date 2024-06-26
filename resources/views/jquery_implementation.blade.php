@@ -40,13 +40,11 @@
 
         if ($fileUpload.length > 0 && $fileUploadDrop.length > 0) {
             var resumable = new Resumable({
-                // Use chunk size that is smaller than your maximum limit due a resumable issue
-                // https://github.com/23/resumable.js/issues/51
                 chunkSize: 1 * 1024 * 1024, // 1MB
                 simultaneousUploads: 3,
                 testChunks: false,
                 permanentErrors: [403, 404, 415, 500, 501],
-                fileType: ['mp4','ogx','oga','ogv','ogg','webm'],
+                fileType: @js($allowed_types),
                 throttleProgressCallbacks: 1,
                 // Get the url from data-url tag
                 target: $fileUpload.data('url'),
