@@ -6,7 +6,7 @@
                 <button type="button" :class="has_file?'':'d-none'" @click="has_file=false" class="btn btn-secondary" onclick="stopUpload()">Cancel Upload</button>
             </div>
             <div :class="has_file?'':'d-none'" class="progress mt-2" wire:ignore role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" id="progress"  style="width: 0%">Uploading</div>
+                <div class="progress-bar" id="progress"  style="width: 0%" ></div>
             </div>
         </div>
     </div>
