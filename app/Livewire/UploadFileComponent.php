@@ -13,7 +13,7 @@ class UploadFileComponent extends Component
 {
     use WithFileUploads;
     // Chunks info
-    public $chunkSize = 10000000; // 20MB -- CAN BE CHANGE TO FIT THE NEEDS OR MAXIMUM UPLOAD SIZE OF THE SERVER 
+    public $chunkSize = 2000000; // 2MB -- CAN BE CHANGE TO FIT THE NEEDS OR MAXIMUM UPLOAD SIZE OF THE SERVER 
     public $fileChunk;
 
     // Final file 

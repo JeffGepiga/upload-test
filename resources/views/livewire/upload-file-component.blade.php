@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-6" x-data="{ has_file: false }">
             <div class="input-group"  @finished="alert('ok')">
-                <input accept="@foreach($accepted_format as $format) video/{{$format}}, @endforeach" type="file" id="myFile" name="myFile" @change="has_file = $el.files[0]" onchange="uploadChunks(this)" class="form-control">
+                <input accept="video/*" type="file" id="myFile" name="myFile" @change="has_file = $el.files[0]" onchange="uploadChunks(this)" class="form-control">
                 <button type="button" :class="has_file?'':'d-none'" @click="has_file=false" class="btn btn-secondary" onclick="stopUpload()">Cancel Upload</button>
             </div>
             <div :class="has_file?'':'d-none'" class="progress mt-2" wire:ignore role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
