@@ -14,7 +14,6 @@
                             <tr>
                                 <th>Directory</th>
                                 <th>File Name</th>
-                                <th>Uploaded At</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,8 +22,6 @@
                                 <td>{{$file->getrelativePath()}}
                                 </td>
                                 <td>{{$file->getFileName()}}
-                                </td>
-                                <td>{{\Carbon\Carbon::parse($file->getMTime())->format("M d, Y g:i A")}}
                                 </td>
                             </tr>
                             @empty
