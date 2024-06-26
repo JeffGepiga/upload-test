@@ -20,11 +20,9 @@ class UploadFileComponent extends Component
     public $fileName;
     public $fileSize;
     public $finalFile;
-
     public $accepted_format = [
         "mp4","mov","avi",'mkv'
     ];
-
     public function updatedFileChunk()
     {
         $finalPath = Storage::path('/livewire-tmp/'.$this->fileName);
@@ -41,8 +39,11 @@ class UploadFileComponent extends Component
         Log::info('expected file size is '.$this->fileSize.' current merged size is: '.$curSize);
 
         if( $curSize == $this->fileSize ){
-            $this->Js("alert('File Uploaded Successfully')");
+           $this->Js("alert('File Uploaded Successfully')");
+           $this->dispatch('finished');
            $this->finalFile = TemporaryUploadedFile::createFromLivewire('/'.$this->fileName);
+
+           //store the file to the file_uploads disk
            $this->finalFile->storeAs('/', $this->fileName,'file_uploads');
         }
     }

@@ -1,7 +1,7 @@
 <form wire:submit="Save" >
     <div class="row">
         <div class="col-sm-6" x-data="{ has_file: false }">
-            <div class="input-group" >
+            <div class="input-group"  @finished="alert('ok')">
                 <input accept="@foreach($accepted_format as $format) video/{{$format}}, @endforeach" type="file" id="myFile" name="myFile" @change="has_file = $el.files[0]" onchange="uploadChunks(this)" class="form-control">
                 <button type="button" :class="has_file?'':'d-none'" @click="has_file=false" class="btn btn-secondary" onclick="stopUpload()">Cancel Upload</button>
             </div>
@@ -40,7 +40,11 @@
             // Get chunk from start
             const chunkEnd  = Math.min( start + @js($chunkSize), file.size );
             const chunk     = file.slice( start, chunkEnd ); 
-            var progress = parseInt(100 + ((start - file.size  ) / (file.size) * 100)); 
+            let progress = parseInt(100 + ((start - file.size  ) / (file.size) * 100)); 
+            if (file.size == chunkEnd) {
+                //if file can be uploaded only once
+                progress=100;
+            }
             document.getElementById('progress').style.width  = progress+"%";
             document.getElementById('progress').setAttribute('data-progress',progress);
             @this.upload('fileChunk', chunk, (uName)=>{}, ()=>{}, (event) => {
