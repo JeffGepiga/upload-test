@@ -43,7 +43,7 @@ class UploadFileComponent extends Component
            $this->finalFile = TemporaryUploadedFile::createFromLivewire('/'.$this->fileName);
 
            //store the file to the file_uploads disk
-           $this->finalFile->storeAs('/', $this->fileName,'file_uploads');
+           $this->finalFile->storeAs('/', $this->fileName,'livewire/file_uploads');
         }
     }
     public function render()
