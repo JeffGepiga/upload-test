@@ -8,8 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/dropzone_implementation', 'dropzone_implementation');
-Route::post('/upload_from_dropzone', [DropzoneUploadController::class,'upload_from_dropzone']);
 
 Route::view('/livewire_implementation', 'livewire_implementation');
 

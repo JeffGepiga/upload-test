@@ -7,9 +7,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link @if(Request::is('dropzone_implementation')) active @endif"  href="{{url('dropzone_implementation')}}">Dropzone Implentation</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link @if(Request::is('livewire_implementation')) active @endif" href="{{url('livewire_implementation')}}">Livewire Implementation</a>
                 </li>
                 <li class="nav-item ">
