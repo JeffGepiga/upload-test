@@ -55,8 +55,7 @@
                     start = chunkEnd;
                     if( start < file.size ){
                         let _time = Math.floor((Math.random() * 2000) + 1);
-
-                        //change to 1 seconds every api call
+                        //changed to 1 seconds every api call
                         _time = 1;
                         console.log('sleeping ',_time,'before next chunk upload');
                         var TimeNo = setTimeout( livewireUploadChunk, _time, file, start );
