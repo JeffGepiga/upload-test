@@ -61,8 +61,9 @@ class JQueryUploadService
         // Group files by the date (week
         $dateFolder = date("Y-m-W");
         // Build the file path
-        $filePath = "upload/{$mime}/{$dateFolder}/";
-        $finalPath = storage_path("app/".$filePath);
+        $filePath = "jquery/{$mime}/{$dateFolder}/";
+        
+        $finalPath = Storage::disk('file_uploads')->path($filePath);
         // move the file name
         $file->move($finalPath, $fileName);
         return response()->json([

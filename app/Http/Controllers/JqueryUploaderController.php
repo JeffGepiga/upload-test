@@ -16,6 +16,7 @@ class JqueryUploaderController extends Controller
             'allowed_types' => $this->upload_container->allowed_types
         ]);
     }
+    
     public function upload(Request $request) {
         //validate
         $request->validate([
