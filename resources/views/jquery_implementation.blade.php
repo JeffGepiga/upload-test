@@ -14,7 +14,7 @@
                     Resumable not supported
                 </div>
                 <div id="resumable-drop" style="display: none">
-                    <p><button id="resumable-browse" data-url="{{ url('jquery_upload') }}" >Upload</button> or drop here
+                    <p><button id="resumable-browse" data-url="{{ url('api/jquery_upload') }}" >Upload</button> or drop here
                     </p>
                     <p></p>
                 </div>
@@ -49,7 +49,7 @@
                 // Get the url from data-url tag
                 target: $fileUpload.data('url'),
                 // Append token to the request - required for web routes
-                query:{_token : `{{csrf_token() }}`}
+                //query:{_token : `{{csrf_token() }}`}
             });
 
         // Resumable.js isn't supported, fall back on a different method

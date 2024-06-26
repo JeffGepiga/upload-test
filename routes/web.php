@@ -15,6 +15,6 @@ Route::view('/livewire_implementation', 'livewire_implementation');
 
 Route::get('/jquery_implementation', [JqueryUploaderController::class,'jquery_implementation']);
 
-Route::post('/jquery_upload', [JqueryUploaderController::class,'upload']);
+Route::post('/api/jquery_upload', [JqueryUploaderController::class,'upload']);
 
 
